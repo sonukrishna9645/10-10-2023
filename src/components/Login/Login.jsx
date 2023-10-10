@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const [un,setUn] =useState('');
     const [pwd,setPwd] =useState('');
     const[error,setError] =useState(false)
+    const navigate=useNavigate();
     const readusername =(event) =>{
         event.preventDefault();
         setUn(event.target.value);
@@ -22,6 +23,11 @@ const Login = () => {
         setError(true);
         return;
        }
+       else
+       {
+       navigate("/Home")
+      }
+       
       
     }
     return (
